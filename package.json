@@ -1,0 +1,19 @@
+{
+  "name": "2dv515_a4",
+  "version": "1.0.0",
+  "description": "A4",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ke222pf/2dv515_A4.git"
+  },
+  "author": "Karl, David",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ke222pf/2dv515_A4/issues"
+  },
+  "homepage": "https://github.com/ke222pf/2dv515_A4#readme"
+}
