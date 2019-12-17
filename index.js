@@ -1,11 +1,22 @@
-const express = require('express')
-const bodyParser = require('body-parser')
-const app = express()
-const port = 5000
 
-app.use(bodyParser.urlencoded({ extended: true }))
-app.use(bodyParser.json())
+const ctj = require('./model/readCSVfile')
+const NaiveBayes = require('./model/NaiveBayes')
 
-require('./routes/routes')(app)
+const bankNotes = async () => {
+  const [X, y] = await ctj.bankNotesData()
+  const nv = new NaiveBayes()
+  nv.fit(X, y)
+  const preds = nv.predict(X)
+  nv.accuracyScore(preds, y)
+}
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+const iris = async () => {
+  const [X, y] = await ctj.irisData()
+  const nv = new NaiveBayes()
+  nv.fit(X, y)
+  const preds = nv.predict(X)
+  nv.accuracyScore(preds, y)
+}
+
+iris()
+bankNotes()
